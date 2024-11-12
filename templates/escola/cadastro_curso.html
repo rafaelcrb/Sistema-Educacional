@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Cadastrar Novo Curso</h1>
+        
+        <form method="post" action="{% url 'cadastrar_curso' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="titulo">Título do Curso</label>
+                <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Digite o título do curso" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="descricao">Descrição do Curso</label>
+                <textarea name="descricao" id="descricao" class="form-control" rows="3" placeholder="Digite a descrição do curso" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Cadastrar Curso</button>
+            <a href="{% url 'lista_cursos' %}" class="btn btn-secondary">Voltar para Lista de Cursos</a>
+        </form>
+    </div>
+
+   
+</body>
+{% endblock %}
+

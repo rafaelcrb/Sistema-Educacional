@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center mt-4">
+    <h1 class="display-4">Bem-vindo ao Sistema de Educação</h1>
+    <p class="lead">Este é um sistema para gerenciar alunos e cursos de uma instituição educacional.</p>
+    <hr class="my-4">
+    <p>Use as seções abaixo para navegar pelo sistema:</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-body text-center">
+                <h5 class="card-title">Alunos</h5>
+                <p class="card-text">Veja a lista de alunos cadastrados ou adicione novos alunos ao sistema.</p>
+                <a href="{% url 'lista_alunos' %}" class="btn btn-primary">Ver Alunos</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-body text-center">
+                <h5 class="card-title">Cursos</h5>
+                <p class="card-text">Veja os cursos disponíveis e gerencie as matrículas dos alunos.</p>
+                <a href="{% url 'lista_cursos' %}" class="btn btn-primary">Ver Cursos</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
